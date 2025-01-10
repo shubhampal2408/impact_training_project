@@ -1,0 +1,108 @@
+<!-- todo/templates/todo/todo_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #4A90E2;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4A90E2;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #357ABD;
+        }
+
+        /* Add Task Link */
+        a.add-task {
+            background-color: #4A90E2;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        a.add-task:hover {
+            background-color: #357ABD;
+        }
+
+        /* Todo List Styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+                      
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li span {
+            font-size: 16px;
+        }
+
+        li span.completed {
+            text-decoration: line-through;
+            color: #bbb;
+        }
+
+        li div {
+            display: flex;
+            gap: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <a href="{% url 'add_todo' %}" class="add-task">Add New Task</a>
+    <ul>
+        {% for todo in todos %}
+            <li>
+                <span {% if todo.completed %} class="completed" {% endif %}>
+                    {{ todo.task_name }}: {{ todo.description }}
+                </span>
+                <div>
+                    {% if todo.completed %}
+                        <a href="{% url 'unmark_completed' todo.pk %}">Unmark as Incomplete</a>
+                    {% else %}
+                        <a href="{% url 'mark_completed' todo.pk %}">Mark as Completed</a>
+                    {% endif %}
+                    <a href="{% url 'delete_todo' todo.pk %}">Delete</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
