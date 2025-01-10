@@ -13,10 +13,15 @@ These challenges often lead to missed deadlines, decreased productivity, and unn
 
 ## 3. Solution Domain
 The Todo List application addresses these problems by providing a centralized platform to manage tasks effectively. It offers the following features:
+
 - **Task Creation**: Add new tasks with ease.
+- ![Screenshot 2025-01-10 124959](https://github.com/user-attachments/assets/fc3e0dcb-e193-46ad-9cd6-86d19442848f)
 - **Task Completion**: Mark tasks as completed to track progress.
+- ![Screenshot 2025-01-10 125041](https://github.com/user-attachments/assets/ccf493f6-35e4-4b35-a0c3-77d788edffbd)
+-  **Task Unmarking**: Reopen tasks if needed.
+-  ![Screenshot 2025-01-10 125255](https://github.com/user-attachments/assets/3a951f3a-0ac6-48b1-8f01-95f5bf79aa6a)
 - **Task Deletion**: Remove tasks that are no longer relevant.
-- **Task Unmarking**: Reopen tasks if needed.
+- ![Screenshot 2025-01-10 125308](https://github.com/user-attachments/assets/556c4595-3176-4dac-a738-bf2846c70ea4)
 - **User-Friendly Interface**: A clean and intuitive design ensures seamless navigation.
 
 The application focuses on simplicity and functionality, making it accessible for users with varying technical expertise.
